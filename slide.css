@@ -36,6 +36,7 @@
     from {
         transform: translateX(-100%)
     }
+
     to {
         transform: translateX(0%)
     }
@@ -45,6 +46,7 @@
     from {
         transform: translateX(100%)
     }
+
     to {
         transform: translateX(0%)
     }
@@ -54,6 +56,7 @@
     from {
         transform: translateX(0%)
     }
+
     to {
         transform: translateX(-100%)
     }
@@ -63,12 +66,14 @@
     from {
         transform: translateX(0%)
     }
+
     to {
         transform: translateX(100%)
     }
 }
 
-.prev, .next {
+.prev,
+.next {
     display: block;
     position: absolute;
     top: 50%;
@@ -78,23 +83,6 @@
     margin-top: -30px;
     opacity: .8;
     transition: opacity .4s, transform .4s
-}
-
-.prev:after, .next:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    margin: 25%;
-    width: 50%;
-    height: 50%
-}
-
-.prev:after {
-    background: url(https://yearsart.com.tw/wp-content/uploads/2019/12/prev.svg) no-repeat center
-}
-
-.next:after {
-    background: url(https://yearsart.com.tw/wp-content/uploads/2019/12/next.svg) no-repeat center
 }
 
 .prev {
@@ -107,11 +95,31 @@
     transform: translateX(100%)
 }
 
-#slide:hover .prev, #slide:hover .next {
+.prev:after,
+.next:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    margin: 25%;
+    width: 50%;
+    height: 50%
+}
+
+.prev:after {
+    background: url(img/prev.svg) no-repeat center
+}
+
+.next:after {
+    background: url(img/next.svg) no-repeat center
+}
+
+#slide:hover .prev,
+#slide:hover .next {
     transform: translateX(0%)
 }
 
-.prev:hover, .next:hover {
+.prev:hover,
+.next:hover {
     opacity: 1
 }
 
@@ -119,11 +127,9 @@
     display: inline-block;
     vertical-align: top;
     position: relative;
-    width: 21px;
-    padding: 5px;
-    opacity: .3;
+    padding: 12px;
+    margin:3px;
     cursor: pointer;
-    transition: .5s
 }
 
 .dot:after {
@@ -131,19 +137,21 @@
     display: block;
     position: absolute;
     top: 0;
-    width: 9px;
-    height: 9px;
-    margin: 6px;
+    left:0;
+    width: 50%;
+    height: 50%;
+    margin: 25%;
     border-radius: 50%;
-    background: #ec661e
+    background: #ec661e77;
+    transition: background .2s linear;
 }
 
-.dot:hover {
-    opacity: .8
+.dot:hover:after {
+    background: #ec661eee;
 }
 
-.dotA {
-    opacity: .7
+.dotA:after {
+    background: #ec661ebb;
 }
 
 .nav {
@@ -159,7 +167,7 @@
     display: inline-block;
     padding: .4em .6em;
     color: #fff;
-    background: #333;
+    background: #000;
     transition: .5s;
     border-radius: 3px;
     margin: .2em;

@@ -4,7 +4,6 @@ var counter = 0,
     items = slideBox.querySelectorAll("div"),
     nav = slide.getElementsByClassName("nav")[0],
     dot = new Array;
-
 for (var i = 0, item; item = items[i]; i++)dot[i] = document.createElement("a"),
     dot[i].classList.add("dot"), nav.appendChild(dot[i]);
 
@@ -75,16 +74,12 @@ function throttle(fn, delay) {
 
 function slidemove(f, g, h) {
     var e = e || window.event;
-
-    var test = items[counter].clientWidth * 100
-
-
-    items[counter].style.transform = "translateX(" + Math.round((items[counter].scrollLeft - f + e.pageX) / items[counter].clientWidth) * 10000 / 100.00 + "%)";
+    items[counter].style.transform = "translateX(" + (items[counter].scrollLeft - f + e.pageX) / items[counter].clientWidth * 100 + "%)";
     if (f > e.pageX) {
-        items[g].style.transform = "translateX(" + Math.round((items[counter].clientWidth - f + e.pageX) / items[counter].clientWidth) * 10000 / 100.00 + "%)";
+        items[g].style.transform = "translateX(" + (items[counter].clientWidth - f + e.pageX) / items[counter].clientWidth * 100 + "%)";
         items[h].style.transform = "";
     } else if (f < e.pageX) {
-        items[h].style.transform = "translateX(" + Math.round((-items[counter].clientWidth - f + e.pageX) / items[counter].clientWidth) * 10000 / 100.00 + "%)";
+        items[h].style.transform = "translateX(" + (-items[counter].clientWidth - f + e.pageX) / items[counter].clientWidth * 100 + "%)";
         items[g].style.transform = "";
     }
 }
@@ -109,19 +104,5 @@ function showCurrent(a, b, c) {
     items[counter].style.transform = "translateX(0%)"
     dot[counter].classList.add("dotA");
 }
-
 var interval = window.setInterval(function () { showCurrent(counter, counter + 1) }, 5500);
-!function () {
-    !function () {
-        var a = { touchstart: "mousedown", touchmove: "mousemove", touchend: "mouseup" };
-        for (originalType in a) document.addEventListener(originalType,
-            function (b) {
-                "click" != b.type && ("touchstart" != b.type && "touchmove" != b.type && "touchend" != b.type && b.preventDefault(),
-                    event = document.createEvent("MouseEvents"),
-                    touch = b.changedTouches[0],
-                    event.initMouseEvent(a[b.type], !0, !0, window, 0, touch.screenX, touch.screenY, touch.clientX, touch.clientY, touch.ctrlKey, touch.altKey, touch.shiftKey, touch.metaKey, 0, null),
-                    b.target.dispatchEvent(event),
-                    event.preventDefault())
-            })
-    }()
-}();
+!function () { !function () { var a = { touchstart: "mousedown", touchmove: "mousemove", touchend: "mouseup" }; for (originalType in a) document.addEventListener(originalType, function (b) { "click" != b.type && ("touchstart" != b.type && "touchmove" != b.type && "touchend" != b.type && b.preventDefault(), event = document.createEvent("MouseEvents"), touch = b.changedTouches[0], event.initMouseEvent(a[b.type], !0, !0, window, 0, touch.screenX, touch.screenY, touch.clientX, touch.clientY, touch.ctrlKey, touch.altKey, touch.shiftKey, touch.metaKey, 0, null), b.target.dispatchEvent(event), event.preventDefault()) }) }() }();
