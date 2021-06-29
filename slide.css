@@ -1,0 +1,171 @@
+#slide {
+    width: 100%
+}
+
+#slide>.box {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 48%;
+    cursor: grab
+}
+
+#slide>.box p {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+#slide>.box>div {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    transform: translateX(100%);
+    width: 100%;
+    padding-bottom: 47.5%;
+    transition: transform .25s linear;
+    animation-duration: .25s;
+    animation-timing-function: linear
+}
+
+@keyframes FIL {
+    from {
+        transform: translateX(-100%)
+    }
+    to {
+        transform: translateX(0%)
+    }
+}
+
+@keyframes FIR {
+    from {
+        transform: translateX(100%)
+    }
+    to {
+        transform: translateX(0%)
+    }
+}
+
+@keyframes FOL {
+    from {
+        transform: translateX(0%)
+    }
+    to {
+        transform: translateX(-100%)
+    }
+}
+
+@keyframes FOR {
+    from {
+        transform: translateX(0%)
+    }
+    to {
+        transform: translateX(100%)
+    }
+}
+
+.prev, .next {
+    display: block;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    width: 60px;
+    padding-top: 60px;
+    margin-top: -30px;
+    opacity: .8;
+    transition: opacity .4s, transform .4s
+}
+
+.prev:after, .next:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    margin: 25%;
+    width: 50%;
+    height: 50%
+}
+
+.prev:after {
+    background: url(https://yearsart.com.tw/wp-content/uploads/2019/12/prev.svg) no-repeat center
+}
+
+.next:after {
+    background: url(https://yearsart.com.tw/wp-content/uploads/2019/12/next.svg) no-repeat center
+}
+
+.prev {
+    left: 0;
+    transform: translateX(-100%)
+}
+
+.next {
+    right: 0;
+    transform: translateX(100%)
+}
+
+#slide:hover .prev, #slide:hover .next {
+    transform: translateX(0%)
+}
+
+.prev:hover, .next:hover {
+    opacity: 1
+}
+
+.dot {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    width: 21px;
+    padding: 5px;
+    opacity: .3;
+    cursor: pointer;
+    transition: .5s
+}
+
+.dot:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 9px;
+    height: 9px;
+    margin: 6px;
+    border-radius: 50%;
+    background: #ec661e
+}
+
+.dot:hover {
+    opacity: .8
+}
+
+.dotA {
+    opacity: .7
+}
+
+.nav {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center
+}
+
+#slide .btn {
+    display: inline-block;
+    padding: .4em .6em;
+    color: #fff;
+    background: #333;
+    transition: .5s;
+    border-radius: 3px;
+    margin: .2em;
+    opacity: .4
+}
+
+#slide .btn:hover {
+    opacity: 1
+}
