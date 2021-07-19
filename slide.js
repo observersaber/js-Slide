@@ -49,6 +49,7 @@ slideBox.addEventListener("mousedown", function (e) {
         var upP = e.pageX;
         slideBox.style.cursor = "",
             items[counter].style.transition = "",
+            items[counter].style.animationName = "",
             items[nextB].style.transition = "",
             items[prevB].style.transition = "";
 
